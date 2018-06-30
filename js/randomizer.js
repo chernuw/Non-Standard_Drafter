@@ -1,6 +1,18 @@
 $(document).ready(function () {
     new ClipboardJS('.btn');
-    var cards;
+    document.getElementById("heroesTA").addEventListener('click', function () {
+        $("#clipboardButton").click();
+    }, false);
+    $("#cardsToggle :input").change(function () {
+        redraw($(this).val());
+    });
+    redraw(5);
+});
+
+
+function redraw(cardCount) {
+    clearCards();
+    let cards;
     cards = [
         {
             "id": 1,
@@ -184,23 +196,17 @@ $(document).ready(function () {
         }
     ];
     let pickedCards = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < cardCount; i++) {
         pickedCards.push(cards.splice(Math.floor(Math.random() * cards.length), 1)[0]);
     }
-    console.log(pickedCards);
-    for (let i = 0; i < pickedCards.length; i++) {
-        $("#cg").append($("<div>").addClass("card")
-            .append($("<div id='card" + i + "'>").addClass("card-body")
-                .append($("<h6>").addClass("card-title").append(pickedCards[i].title + " (" + pickedCards[i].id + ")"))
-            ));
-        for (let j = 0; j < 5; j++) {
-            $("#card" + i).append($("<li>").append(pickedCards[i].heroes[j]));
-        }
-    }
-
-    pickedCards.forEach((value, index) => $("#slot"+(index+1)+"").append($("<img src='"+value.img+"'>")));
-
-    pickedCards.forEach((value, index, array) => $("#ta").append(
+    pickedCards.forEach((value, index) => $("#slot" + (index + 1) + "").append($("<img src='" + value.img + "'>")));
+    pickedCards.forEach((value, index) => $("#ta").append(
         "[" + (index + 1) + "] " + value.title + " (" + value.id + ") : " + value.heroes + "\n"
     ));
-});
+}
+
+function clearCards() {
+    for (let i = 1; i < 10; i++) {
+        $("#slot" + i + "").empty();
+    }
+}

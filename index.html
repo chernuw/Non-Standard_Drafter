@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Non-Standard Drafter</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -14,7 +14,7 @@
 
 <div class="container-fluid align-items-center">
     <header style="margin: 2rem 1rem 1rem;">
-        <h1 class="text-center text-light">DRAFTER FOR NON-STANDART TOURNAMENT</h1>
+        <h1 class="text-center text-light">DRAFTER FOR NON-STANDARD TOURNAMENT</h1>
     </header>
     <div class="row">
         <div class="col align-content-center">
@@ -54,13 +54,17 @@
         </div>
         <div class="col-1">
             <div class="text-center">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons" id="cardsToggle">
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options" value="5" autocomplete="off" checked> 5 Hero
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" value="9" autocomplete="off" checked> 9 Hero
+                    </label>
+                </div>
                 <button class="btn btn-primary" type="button" id="clipboardButton"
                         data-clipboard-action="copy" data-clipboard-target="#heroesTA">
                     Copy to clipboard
-                </button>
-                <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false"
-                        autocomplete="off">
-                    9 cards
                 </button>
             </div>
         </div>
