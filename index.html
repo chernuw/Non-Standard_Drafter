@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/clipboard.min.js"></script>
+</head>
+<body background="img/global-bg.jpg">
+
+<div class="container-fluid align-items-center">
+    <header style="margin: 2rem 1rem 1rem;">
+        <h1 class="text-center text-light">DRAFTER FOR NON-STANDART TOURNAMENT</h1>
+    </header>
+    <div class="row">
+        <div class="col align-content-center">
+            <div class="row justify-content-center">
+                <div class="crop" id="slot1">
+                </div>
+                <div class="crop" id="slot2">
+                </div>
+                <div class="crop" id="slot6">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="crop" id="slot3">
+                </div>
+                <div class="crop" id="slot4">
+                </div>
+                <div class="crop" id="slot7">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="crop" id="slot5">
+                </div>
+                <div class="crop" id="slot8">
+                </div>
+                <div class="crop" id="slot9">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-10">
+            <div id="heroesTA">
+                <textarea id="ta" rows="5" class="col-12" style="margin-right: 10px;"></textarea>
+            </div>
+        </div>
+        <div class="col-1">
+            <div class="text-center">
+                <button class="btn btn-primary" type="button" id="clipboardButton"
+                        data-clipboard-action="copy" data-clipboard-target="#heroesTA">
+                    Copy to clipboard
+                </button>
+                <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false"
+                        autocomplete="off">
+                    9 cards
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<br>
+<script src="js/randomizer.js"></script>
+</body>
+</html>
