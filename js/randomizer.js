@@ -12,8 +12,8 @@ $(document).ready(function () {
 
 function redraw(cardCount) {
     clearCards();
-    let cards;
-    cards = [
+    let mapPool = ["Башни рока", "Призрачные копи", "Завод Вольской", "Бухта черносерда", "Сады ужаса"];
+    let cards = [
         {
             "id": 1,
             "title": "Попробуй убей!",
@@ -196,13 +196,20 @@ function redraw(cardCount) {
         }
     ];
     let pickedCards = [];
+    let pickedMaps = [];
+    let ta = $("#ta");
     for (let i = 0; i < cardCount; i++) {
         pickedCards.push(cards.splice(Math.floor(Math.random() * cards.length), 1)[0]);
     }
+    for (let i = 0; i < Math.ceil(Math.sqrt(cardCount - 4)) + 2; i++) {
+        pickedMaps.push(mapPool.splice(Math.floor(Math.random() * mapPool.length), 1)[0]);
+    }
     pickedCards.forEach((value, index) => $("#slot" + (index + 1) + "").append($("<img src='" + value.img + "'>")));
-    pickedCards.forEach((value, index) => $("#ta").val($("#ta").val()+
+    pickedCards.forEach((value, index) => ta.val(ta.val() +
         "[" + (index + 1) + "] " + value.title + " (" + value.id + ") : " + value.heroes + "\n"
     ));
+    ta.val(ta.val() + "Карты: ");
+    pickedMaps.forEach(value => ta.val(ta.val() + value + ", "));
 }
 
 function clearCards() {
