@@ -12,7 +12,8 @@ $(document).ready(function () {
 
 function redraw(cardCount) {
     clearCards();
-    let mapPool = ["Башни рока", "Призрачные копи", "Завод Вольской", "Бухта черносерда", "Сады ужаса"];
+    let mapPool = ["Башни рока", "Бойня на Браксисе", "Завод Вольской", "Бухта черносерда", 
+        "Сады ужаса", "Альтеракский перевал", "Проклятая лощина"];
     let cards = [
         {
             "id": 1,
@@ -201,7 +202,7 @@ function redraw(cardCount) {
     for (let i = 0; i < cardCount; i++) {
         pickedCards.push(cards.splice(Math.floor(Math.random() * cards.length), 1)[0]);
     }
-    for (let i = 0; i < Math.ceil(Math.sqrt(cardCount - 4)) + 2; i++) {
+    for (let i = 0; i < cardCount; i++) {
         pickedMaps.push(mapPool.splice(Math.floor(Math.random() * mapPool.length), 1)[0]);
     }
     pickedCards.forEach((value, index) => $("#slot" + (index + 1) + "").append($("<img src='" + value.img + "'>")));
