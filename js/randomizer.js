@@ -217,9 +217,9 @@ function redraw(cardCount) {
         $("#slot6").hide();
         $("#slot7").hide();
     } else {
-        $("#slot3").show();
         $("#slot4").show();
         $("#slot5").show();
+        $("#slot6").show();
         $("#slot7").show();
     }
 }
