@@ -6,7 +6,7 @@ $(document).ready(function () {
     $("#cardsToggle :input").change(function () {
         redraw($(this).val());
     });
-    redraw(5);
+    redraw(3);
 });
 
 
@@ -210,21 +210,21 @@ function redraw(cardCount) {
     ));
     ta.val(ta.val() + "Карты: ");
     pickedMaps.forEach(value => ta.val(ta.val() + value + ", "));
-    if(cardCount == 5){
+    if(cardCount == 3){
+        $("#slot4").hide();
+        $("#slot5").hide();
         $("#slot6").hide();
         $("#slot7").hide();
-        $("#slot8").hide();
-        $("#slot9").hide();
     } else {
-        $("#slot6").show();
+        $("#slot3").show();
+        $("#slot4").show();
+        $("#slot5").show();
         $("#slot7").show();
-        $("#slot8").show();
-        $("#slot9").show();
     }
 }
 
 function clearCards() {
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i < 8; i++) {
         $("#slot" + i + "").empty();
     }
     $("#ta").val('');
